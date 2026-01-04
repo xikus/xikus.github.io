@@ -12,17 +12,17 @@ export const siteConfig: SiteConfig = {
 	subtitle: "尽量晚一点投降",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
-		hue: 230, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+		hue: 210, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
 	},
 	banner: {
 		enable: true,
-		src: "assets/images/coast.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: "assets/images/gorgeousmountain.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
-			text: "不像海边的海边", // Credit text to be displayed
-			url: "", // (Optional) URL link to the original artwork or artist's page
+			text: "", // Credit text to be displayed
+			url: "https://wallpaperaccess.com/21-9-4k", // (Optional) URL link to the original artwork or artist's page
 		},
 	},
 	toc: {
@@ -43,19 +43,19 @@ export const navBarConfig: NavBarConfig = {
 	links: [
 		LinkPreset.Home,
 		LinkPreset.Archive,
-		LinkPreset.About,
-		{
-			name: "GitHub",
-			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
-		},
+		// LinkPreset.About,
+		// {
+		// 	name: "GitHub",
+		// 	url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
+		// 	external: true, // Show an external link icon and will open in a new tab
+		// },
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/LuLu.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "assets/images/yuri-shwedoff-yuri-shwedoff-pajs3qv1ojw.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "xikus",
-	bio: "故吾虽愚，卒获有所闻",
+	bio: "故余虽愚，卒获有所闻",
 	links: [
 		// {
 		// 	name: "Twitter",
