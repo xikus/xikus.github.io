@@ -35,6 +35,67 @@ RQ-VAE是VAE的一个变种，其核心创新在于引入了**残差量化** �
 RQ-VAE的生成过程契合由粗到细的规律，因此带来了一个关键优势：语义的层次化编码。最终得到的语义ID序列，其每个位置的token天然地对应着不同粒度的语义信息。（如：第一个token代表鞋，第二个token代表运动鞋，第三个token代表篮球鞋...)，这极大地增强了系统的泛化性，因为语义相似的物品（如“篮球鞋”和“足球鞋”），其语义ID的前缀必然相同或高度相似。
 同时，由于RQ-VAE利用的是Item的语义信息，冷启动问题被极大地缓解（新物品也有语义信息）。
 ![alt text](<../../assets/images/Pasted image 20260120105800.png>)
+## RQ-VAE具体实现
+
+### RQ-VAE架构
+
+![alt text](<../../assets/images/Pasted image 20260120200244.png>)
+### K-Means Init
+
+对于每一层VectorQuantizer，在第一次forward时，对来自上一级的输入进行K-Means聚类，然后用聚类簇的中心初始化码表
+
+### Loss函数
+
+- RQ-VAE使用三种Loss函数：
+
+- `commitment_loss`和`codebook_loss`在VectorQuantizer中使用。两者皆为输入embedding与距之最近的码表向量的“距离”，但是`codebook_loss`不对输入embedding进行反向传播，从而只优化码表；而`commitment_loss`不对码表向量进行反向传播，从而只优化编码器，使编码器输出向已选码本靠拢。
+
+```
+commitment_loss = F.mse_loss(x_q.detach(), x)
+codebook_loss = F.mse_loss(x_q, x.detach())
+```
+
+- reconstruction_loss：重建损失。
+
+### Sinkhorn-Knopp
+
+#### 问题：富者越富 (Rich get richer)
+
+1. 初始化时，某些码本向量可能离数据稍微近一点点。
+2. 这些“幸运”的码本会被大量样本选中，并在训练中不断更新，变得离数据更近。
+3. 其他码本因为从未被选中（或选中概率极低），永远得不到梯度更新，变成 “死码” (Dead Code)。
+4. 结果：虽然设定了 256 个码本，实际可能有 200 个都是空的，模型容量被浪费了
+
+#### 数学解释
+
+给定一个非负矩阵 Q，我们要找到两个对角缩放矩阵 D1​ 和 D2​，使得变换后的矩阵P=D1​QD2​ 满足两个约束：
+
+1. 行和约束：每一行的和固定。
+2. 列和约束：每一列的和固定。
+
+##### 迭代公式
+
+假设输入是相似度矩阵Q(0)，迭代过程如下：
+
+Step 1: 行归一化 (Row Normalization)
+
+使得每一行的和符合约束
+
+$$Q_{ij}^{(t+0.5)} \leftarrow \frac{Q_{ij}^{(t)}}{\sum_{k} Q_{ik}^{(t)}}$$
+
+Step 2: 列归一化 (Column Normalization)
+
+使得每一列的和符合约束。
+
+$$Q_{ij}^{(t+1)} \leftarrow \frac{Q_{ij}^{(t+0.5)}}{\sum_{l} Q_{lj}^{(t+0.5)}}$$
+
+重复这两个步骤直到收敛。
+
+#### 效果
+
+Sinkhorn 通过迭代归一化，强制要求每个码本在一个 Batch 中被分配到的总概率权重相等。这迫使模型去激活那些冷门的码本，最大化离散编码的熵。
+
+- 实际上，我还没有太理解这个算法😂（2026.01.20）
 # sentence-t5模型训练
 TIGER系统的最后一步，是利用编码好的语义ID训练一个生成模型（如 **sentence-T5**）。这一过程的本质，是将推荐任务**重构为一个Seq2Seq任务**：
 - **输入序列**：用户近期交互过的物品（已转化为语义ID序列）。
