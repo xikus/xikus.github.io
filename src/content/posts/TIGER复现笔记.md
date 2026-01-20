@@ -1,3 +1,10 @@
+---
+title: TIGER复现笔记
+published: 2026-01-20
+description: TIGER复现过程中学习的一些知识
+category: Learning
+tags: [reproduce]
+---
 # 简介
 **TIGER**是Google提出的一种**生成式召回**推荐系统。其核心思想是将推荐任务转化为自回归生成任务。
 TIGER的工作流程分为三步：
