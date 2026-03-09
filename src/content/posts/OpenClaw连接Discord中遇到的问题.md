@@ -18,7 +18,7 @@ tags:
  大部分设置可以根据**参考教程**一步步来，下文是我在配置过程中遇到的问题与经验
 # 如何查看Channel连接情况
 - 使用`openclaw channels status`命令
-	![[Pasted image 20260309125039.png]]
+	![alt text](<../../assets/images/Pasted image 20260309125039.png>)
 	- reachable：OpenClaw 网关服务本身在线，本地配置和基础网络没问题。
 	- enabled：允许 OpenClaw 启动 Discord 集成
 	- configured：找到了配置文件（token 等参数已填写）
