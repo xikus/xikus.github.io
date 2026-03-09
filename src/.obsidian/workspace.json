@@ -1,0 +1,202 @@
+{
+  "main": {
+    "id": "38ded2dd61d74309",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c6bec0008fe67d8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f6230bb344b6142",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/OpenClaw连接Discord中遇到的问题.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "OpenClaw连接Discord中遇到的问题"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "12108f00243098a7",
+    "type": "split",
+    "children": [
+      {
+        "id": "d6bc56a985909403",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b3d95e65de9af22a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "e24e1887b5b2b353",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "c724f23889f9f34a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5c58c7253f1372f5",
+    "type": "split",
+    "children": [
+      {
+        "id": "7435c318cca1462e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "92285ee629b40a02",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/posts/OpenClaw连接Discord中遇到的问题.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "OpenClaw连接Discord中遇到的问题 的反向链接列表"
+            }
+          },
+          {
+            "id": "342500e46e45d18f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/posts/OpenClaw连接Discord中遇到的问题.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "OpenClaw连接Discord中遇到的问题 的出链列表"
+            }
+          },
+          {
+            "id": "b6fe97722f62d7c9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "3a3541f71b8e9ba3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "28bd34a9e49db1ae",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/posts/OpenClaw连接Discord中遇到的问题.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "OpenClaw连接Discord中遇到的问题 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "5f6230bb344b6142",
+  "lastOpenFiles": [
+    "assets/images/Pasted image 20260309092840.png",
+    "content/posts/OpenClaw连接Discord中遇到的问题.md",
+    "content/posts/TIGER复现笔记.md",
+    "2026-01-20.md",
+    "Pasted image 20260309110700.png",
+    "assets/images/Pasted image 20260309125039.png",
+    "assets/images/Pasted image 20260309125035.png",
+    "assets/images/Pasted image 20260309112705.png",
+    "assets/images/Pasted image 20260309111353.png",
+    "assets/images/Pasted image 20260309111010.png",
+    "assets/images/Pasted image 20260309110913.png",
+    "assets/images/Pasted image 20260309110700.png",
+    "assets/images/Pasted image 20260309092910.png"
+  ]
+}
